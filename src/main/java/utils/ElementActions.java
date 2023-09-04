@@ -15,6 +15,7 @@ public class ElementActions {
     public ElementActions(WebDriver driver) {
         this.driver = driver;
     }
+
     public ElementActions waitForVisibility(By elementLocator){
         Helper.getExplicitWait(driver)
                 .until(ExpectedConditions.visibilityOfElementLocated(elementLocator));
@@ -25,6 +26,14 @@ public class ElementActions {
         Helper.getExplicitWait(driver)
                 .until(ExpectedConditions.invisibilityOfElementLocated(elementLocator));
         return this;
+    }
+
+    public Boolean isDisplayed(By elementLocator){
+        try{
+            return driver.findElement(elementLocator).isDisplayed();
+        }catch (NoSuchElementException e){
+            return false;
+        }
     }
     public ElementActions click(By elementLocator) {
         click(driver, elementLocator);
@@ -61,6 +70,13 @@ public class ElementActions {
         return this;
     }
     public void type(WebDriver driver, By elementLocator, String text, boolean clearBeforeTyping) {
+        try {
+            Helper.getExplicitWait(driver).until(ExpectedConditions.visibilityOfElementLocated(elementLocator));
+        } catch (TimeoutException toe) {
+            fail(toe.getMessage());
+        } catch (Exception e) {
+            fail(e.getMessage());
+        }
         try {
             if (!driver.findElement(elementLocator).getAttribute("value").isBlank() && clearBeforeTyping) {
                 driver.findElement(elementLocator).clear();

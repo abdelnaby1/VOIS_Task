@@ -3,6 +3,8 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="VOIS Task">
        <classes>
+           <class name="tests.AddToCartTests">
+           </class>
        </classes>
     </test>
 </suite>
