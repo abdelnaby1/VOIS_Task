@@ -20,4 +20,7 @@ public class HomePage {
     public SearchResultsPage searchFor(String searchTerm){
        return new Navbar(driver).searchFor(searchTerm);
     }
+    public TodayDeals openTodayDeals(){
+        return new Navbar(driver).openTodayDeals();
+    }
 }

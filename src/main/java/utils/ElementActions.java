@@ -17,8 +17,23 @@ public class ElementActions {
     }
 
     public ElementActions waitForVisibility(By elementLocator){
-        Helper.getExplicitWait(driver)
-                .until(ExpectedConditions.visibilityOfElementLocated(elementLocator));
+        try {
+            Helper.getExplicitWait(driver)
+                    .until(ExpectedConditions.visibilityOfElementLocated(elementLocator));        } catch (TimeoutException toe) {
+            fail(toe.getMessage());
+        } catch (Exception e) {
+            fail(e.getMessage());
+        }
+        return this;
+    }
+    public ElementActions waitForVisibilityOfAll(By elementLocator){
+        try {
+            Helper.getExplicitWait(driver)
+                    .until(ExpectedConditions.visibilityOfAllElementsLocatedBy(elementLocator));        } catch (TimeoutException toe) {
+            fail(toe.getMessage());
+        } catch (Exception e) {
+            fail(e.getMessage());
+        }
         return this;
     }
 

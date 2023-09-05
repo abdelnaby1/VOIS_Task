@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import pages.CartPage;
 import pages.SearchResultsPage;
+import pages.TodayDeals;
 import utils.ElementActions;
 
 public class Navbar {
@@ -12,6 +13,7 @@ public class Navbar {
     private By searchBtn = By.id("nav-search-submit-button");
     private By cartLink = By.id("nav-cart");
     private By cartCountLoc = By.id("nav-cart-count");
+    private By todayDealsLinkLoc = By.xpath("//div[contains(@id,'nav-xshop')]//a[contains(text(),\"Today's Deals\")]");
     public Navbar(WebDriver driver) {
         this.driver = driver;
     }
@@ -28,5 +30,11 @@ public class Navbar {
     }
     public int getCartCount(){
         return Integer.parseInt(new ElementActions(driver).getText(cartCountLoc));
+    }
+
+    public TodayDeals openTodayDeals(){
+        new ElementActions(driver)
+                .click(todayDealsLinkLoc);
+        return new TodayDeals(driver);
     }
 }

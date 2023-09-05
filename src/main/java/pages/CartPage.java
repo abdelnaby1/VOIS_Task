@@ -13,6 +13,6 @@ public class CartPage {
     }
 
     public String getRecentlyAddedProductTitle(){
-        return new ElementActions(driver).getText(recentlyAddedProductLoc);
+        return new ElementActions(driver).getText(recentlyAddedProductLoc).toLowerCase();
     }
 }

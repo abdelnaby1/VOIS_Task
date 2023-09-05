@@ -19,6 +19,6 @@ public class ProductDetailsPage {
     }
 
     public String getProductTitle() {
-        return new ElementActions(driver).getText(productTitleLoc);
+        return new ElementActions(driver).getText(productTitleLoc).toLowerCase();
     }
 }
