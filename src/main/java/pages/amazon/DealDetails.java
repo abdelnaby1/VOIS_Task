@@ -1,6 +1,5 @@
-package pages;
+package pages.amazon;
 
-import org.bouncycastle.jcajce.provider.drbg.DRBG;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import utils.ElementActions;

@@ -1,10 +1,10 @@
-package pages.common;
+package pages.amazon.common;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import pages.CartPage;
-import pages.SearchResultsPage;
-import pages.TodayDeals;
+import pages.amazon.CartPage;
+import pages.amazon.SearchResultsPage;
+import pages.amazon.TodayDeals;
 import utils.ElementActions;
 
 public class Navbar {

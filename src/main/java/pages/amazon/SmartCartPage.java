@@ -1,7 +1,7 @@
-package pages;
+package pages.amazon;
 
 import org.openqa.selenium.WebDriver;
-import pages.common.Navbar;
+import pages.amazon.common.Navbar;
 
 public class SmartCartPage {
     private WebDriver driver;
