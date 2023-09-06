@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Api Suite">
+
+    <test verbose="2" preserve-order="true" name="VOIS Task - Api">
+        <classes>
+           <class name="tests.Apis.PostsTests">
+           </class>
+            <class name="tests.Apis.UserTests">
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -5,6 +5,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Random;
 
 public class Helper {
     private static int getTimeout() {
@@ -17,6 +18,9 @@ public class Helper {
 
     public static void implicitWait(WebDriver driver) {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(getTimeout()));
+    }
+    public static int getRandomNumberBetweenTwoValues(int lowValue, int highValue) {
+        return new Random().nextInt(highValue - lowValue) + lowValue;
     }
 
 
