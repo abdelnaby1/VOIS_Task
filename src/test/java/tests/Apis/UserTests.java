@@ -79,7 +79,7 @@ public class UserTests {
         List<Map<String, Object>> matchedObjects = objects.stream().filter((Map<String, Object> object) -> object.get("completed").equals(false))
                 .peek(System.out::println)
                 .toList();
-
-
+        System.out.println("the titles of not completed todos are: ");
+        matchedObjects.forEach(obj -> System.out.println(obj.get("title")));
     }
 }
