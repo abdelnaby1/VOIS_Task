@@ -44,9 +44,14 @@ public class ElementActions {
     }
 
     public Boolean isDisplayed(By elementLocator){
-        try{
+        try {
+            Helper.getExplicitWait(driver).until(ExpectedConditions.elementToBeClickable(elementLocator));
             return driver.findElement(elementLocator).isDisplayed();
-        }catch (NoSuchElementException e){
+        } catch (TimeoutException | NoSuchElementException toe) {
+           return false;
+        } catch (Exception e) {
+            return false;
+        }finally{
             return false;
         }
     }

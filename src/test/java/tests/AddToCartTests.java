@@ -51,7 +51,7 @@ public class AddToCartTests {
                 .goToCart()
                 .getRecentlyAddedProductTitle();
 
-        Assert.assertTrue(productTitle.contains(recentlyAddedProductTitle.substring(0, recentlyAddedProductTitle.length() - 3)));
+        Assert.assertTrue(productTitle.contains(recentlyAddedProductTitle));
         Assert.assertEquals(new Navbar(driver).getCartCount(),1);
     }
     @Test
@@ -73,7 +73,7 @@ public class AddToCartTests {
                 .goToCart()
                 .getRecentlyAddedProductTitle();
 
-        Assert.assertTrue(productTitle.contains(recentlyAddedProductTitle.substring(0, recentlyAddedProductTitle.length() - 3)));
+        Assert.assertTrue(productTitle.contains(recentlyAddedProductTitle));
         Assert.assertEquals(new Navbar(driver).getCartCount(),1);
     }
     @AfterMethod
