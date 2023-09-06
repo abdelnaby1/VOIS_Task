@@ -39,12 +39,15 @@ public class TodayDeals {
         new ElementActions(driver).click(discountLoc(discountDeal));
         return this;
     }
-    public Boolean openDealOrProduct(int dealNum){
+    public ProductDetailsPage openDealOrProduct(int dealNum){
         new ElementActions(driver)
                 .click(dealLoc(dealNum));
         String url = driver.getCurrentUrl();
-        return url.contains("/deals") || url.contains("/deal");
-//        return new DealDetails(driver);
+        if(url.contains("/deals") || url.contains("/deal")){
+            return new DealDetails(driver).openProduct(dealNum);
+        }else{
+            return new ProductDetailsPage(driver);
+        }
     }
 
     public TodayDeals gotoPageNumber(int pageNum){
