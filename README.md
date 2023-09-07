@@ -22,7 +22,7 @@ and to see your report will be inside reports folder,\
 it's a Extent Report.\
 -Ppart1 is a profile id that is mapped to run the testng.xml file
 ##
-### Part 2
+### Part 2 - test cases for the required scenarios
 will be found inside the testCases.txt file which contains a url to google sheet of test cases
 
 ##
