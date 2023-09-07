@@ -24,7 +24,8 @@ it's a Extent Report.\
 ##
 ### Part 2 - test cases for the required scenarios
 will be found inside the testCases.txt file which contains a url to google sheet of test cases
-
+and here again the url\
+https://docs.google.com/spreadsheets/d/1cb7jfbioIVQSidPTZDAwXICao4XAoFuQSIls1tILdBk/edit?usp=sharing
 ##
 ### Part 3 - Bonus Task
 will be found inside the src/test/java/tests/Apis folder\
