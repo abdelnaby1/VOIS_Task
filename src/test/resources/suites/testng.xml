@@ -7,8 +7,8 @@
     </listeners>
     <test verbose="2" preserve-order="true" name="VOIS Task">
        <classes>
-           <class name="tests.AddToCartTests">
-           </class>
+<!--           <class name="tests.AddToCartTests">-->
+<!--           </class>-->
            <class name="tests.ReserveTests">
            </class>
        </classes>

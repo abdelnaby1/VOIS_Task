@@ -154,7 +154,7 @@
 
   <profiles>
     <profile>
-      <id>demo</id>
+      <id>part1</id>
       <build>
         <plugins>
           <plugin>

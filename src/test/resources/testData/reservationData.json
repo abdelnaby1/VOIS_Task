@@ -1,0 +1,19 @@
+{
+  "from": "Chikkamagaluru",
+  "to" : "Bengaluru",
+  "afterHowManyDaysFromNow": "1",
+  "serviceNum": "1",
+  "seatNum": "1",
+  "customerMobile": "6789125987",
+  "customerEmail": "ahmed@gmail.com",
+  "passengerName": "Ahmed",
+  "passengerGender": "MALE",
+  "passengerAge": "25",
+  "passengerOoncession": "GENERAL PUBLIC",
+  "passengerCountry": "Egypt",
+  "passengerPassport": "98756544554",
+  "passengerAddress": "Hotel number 6",
+  "passengerdobYear": "1998",
+  "passengerdobMonth": "Aug",
+  "passengerdobDay": "26"
+}

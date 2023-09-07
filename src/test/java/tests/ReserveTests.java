@@ -1,5 +1,7 @@
 package tests;
 
+import DataManager.JsonFileForDDTManager;
+import DataManager.JsonFileManager;
 import driverManager.DriverFactory;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -10,27 +12,36 @@ import pages.ksrtc.HomePage;
 
 public class ReserveTests {
     WebDriver driver;
-
+    JsonFileManager manager;
     @BeforeMethod
     public void setup(){
         driver = DriverFactory.getDriver();
+        manager = new JsonFileManager(System.getProperty("user.dir")+"/src/test/resources/testData/reservationData.json");
+
     }
 
     @Test
     public void reserveTest(){
         new HomePage(driver)
                 .gotoUrl()
-                .chooseRoute("Chikkamagaluru","Bengaluru")
-                .chooseArrivalDate(1)
+                .chooseRoute(manager.getAsString("from"),manager.getAsString("to"))
+                .chooseArrivalDate(Integer.parseInt(manager.getAsString("afterHowManyDaysFromNow")))
                 .search()
-                .selectService(1)
-                .selectSeat(1)
+                .selectService(Integer.parseInt(manager.getAsString("serviceNum")))
+                .selectSeat(Integer.parseInt(manager.getAsString("seatNum")))
                 .selectBoardAndDroppingPoints()
-                .fillCustomerDetails("6789125987","ahmed@gmail.com")
-                .fillPassengerDetails("Ahmed","MALE",
-                        "25","GENERAL PUBLIC",
-                        "Egypt","98756544554","Hotel number 6",
-                        "1998","Aug",26)
+                .fillCustomerDetails(manager.getAsString("customerMobile"),
+                        manager.getAsString("customerEmail"))
+                .fillPassengerDetails(manager.getAsString("passengerName"),
+                        manager.getAsString("passengerGender"),
+                        manager.getAsString("passengerAge"),
+                        manager.getAsString("passengerOoncession"),
+                        manager.getAsString("passengerCountry"),
+                        manager.getAsString("passengerPassport"),
+                        manager.getAsString("passengerAddress"),
+                        manager.getAsString("passengerdobYear"),
+                        manager.getAsString("passengerdobMonth"),
+                        Integer.parseInt(manager.getAsString("passengerdobDay")))
                 .makePayment();
 
 //        Assert.assertEquals(BrowserActions.getPageUrl(driver),"https://ksrtc.in/oprs-web/booking/revamp/paxInfo.do");
